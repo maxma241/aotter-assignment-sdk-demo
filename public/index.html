@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .long-content {
+      width: 70%;
+      height: 1000px;
+      background-color: #aaa;
+      margin: 20px auto;
+    }
+  </style>
+</head>
+<body>
+  <div class="long-content"></div>
+  <div id="ad1"></div>
+  <div class="long-content"></div>
+  <div id="ad2"></div>
+
+  <script src="../src/index.ts"></script>
+  <script>
+    const videoAd = AotterAds({
+      el: 'ad1',
+      type: 'video',
+      onAdLoaded(el, ad) {
+        console.log(ad)
+      },
+      onAdFailed(el, err) {
+        console.error(err)
+      },
+      onAdImpression(ad) {
+        console.log(ad)
+      },
+    });
+    const bannerAd = AotterAds({
+      el: 'ad2',
+      type: 'banner',
+      onAdLoaded(el, ad) {
+        console.log(ad)
+      },
+      onAdFailed(el, err) {
+        console.error(err)
+      },
+      onAdImpression(ad) {
+        console.log(ad)
+      },
+    });
+    videoAd.init()
+    bannerAd.init()
+  </script>
+</body>
+</html>
