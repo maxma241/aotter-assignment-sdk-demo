@@ -1,5 +1,36 @@
 ## 電獺 - Ad SDK
 
+Build tool: Parcel
+
+## How to run
+
+Install
+```shell
+npm i
+# or
+yarn
+```
+Run the api server first (default port: 3000)
+```shell
+npm run server
+# or
+yarn run server
+```
+
+Run client (default port: 8080, `dist` folder)
+```shell
+npm start
+# or
+yarn start
+```
+
+Build (in `build` folder, current js, css will be separated)
+```shell
+npm run build
+# or
+yarn run build
+```
+
 [上線計畫書]()
 
 
