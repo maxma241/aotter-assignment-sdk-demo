@@ -1,0 +1,453 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Ad Test test initial ad and "onAdFailed": no-ad 1`] = `
+<div>
+  
+
+  <div
+    class="ad-container"
+  >
+    
+
+    <a
+      class="ad-banner"
+      href="https://agirls.aotter.net/post/55419"
+      target="_blank"
+    >
+      
+  
+      <div
+        class="image"
+      >
+        
+    
+        <div
+          class="content"
+        >
+          
+      
+          <img
+            alt=""
+            class="ads-img"
+            src="https://agirls.aotter.net/media/da724a8b-fe19-4f4e-8262-75c207ae038b.jpg"
+          />
+          
+    
+        </div>
+        
+  
+      </div>
+      
+  
+  
+      <div
+        class="info"
+      >
+        
+    
+        <div
+          class="info-icon"
+        >
+          
+      
+          <img
+            alt=""
+            height="20"
+            src="https://static.xx.fbcdn.net/rsrc.php/v3/ys/r/SRBDu_p7126.png"
+            width="20"
+          />
+          
+    
+        </div>
+        
+  
+      </div>
+      
+  
+      <div
+        class="title"
+      >
+        
+    
+        <div
+          class="content"
+        >
+          
+      
+          <div
+            class="domain"
+          >
+            
+        
+            <span>
+              agirls.aotter.net
+            </span>
+            
+      
+          </div>
+          
+      
+          <div
+            class="main"
+          >
+            
+        
+            <span>
+              三星電視獨家搶先支援Apple TV App，手機還能一秒變遙控器！
+            </span>
+            
+      
+          </div>
+          
+    
+        </div>
+        
+  
+      </div>
+      
+
+    </a>
+    
+
+  </div>
+</div>
+`;
+
+exports[`Ad Test test initial ad and "onAdLoaded",: banner 1`] = `
+<div>
+  
+
+  <div
+    class="ad-container"
+  >
+    
+
+    <a
+      class="ad-banner"
+      href="https://agirls.aotter.net/post/55419"
+      target="_blank"
+    >
+      
+  
+      <div
+        class="image"
+      >
+        
+    
+        <div
+          class="content"
+        >
+          
+      
+          <img
+            alt=""
+            class="ads-img"
+            src="https://agirls.aotter.net/media/da724a8b-fe19-4f4e-8262-75c207ae038b.jpg"
+          />
+          
+    
+        </div>
+        
+  
+      </div>
+      
+  
+  
+      <div
+        class="info"
+      >
+        
+    
+        <div
+          class="info-icon"
+        >
+          
+      
+          <img
+            alt=""
+            height="20"
+            src="https://static.xx.fbcdn.net/rsrc.php/v3/ys/r/SRBDu_p7126.png"
+            width="20"
+          />
+          
+    
+        </div>
+        
+  
+      </div>
+      
+  
+      <div
+        class="title"
+      >
+        
+    
+        <div
+          class="content"
+        >
+          
+      
+          <div
+            class="domain"
+          >
+            
+        
+            <span>
+              agirls.aotter.net
+            </span>
+            
+      
+          </div>
+          
+      
+          <div
+            class="main"
+          >
+            
+        
+            <span>
+              三星電視獨家搶先支援Apple TV App，手機還能一秒變遙控器！
+            </span>
+            
+      
+          </div>
+          
+    
+        </div>
+        
+  
+      </div>
+      
+
+    </a>
+    
+
+  </div>
+</div>
+`;
+
+exports[`Ad Test test onAdFailed: no-ad 1`] = `
+<div>
+  
+
+  <div
+    class="ad-container"
+  >
+    
+
+    <a
+      class="ad-banner"
+      href="https://agirls.aotter.net/post/55419"
+      target="_blank"
+    >
+      
+  
+      <div
+        class="image"
+      >
+        
+    
+        <div
+          class="content"
+        >
+          
+      
+          <img
+            alt=""
+            class="ads-img"
+            src="https://agirls.aotter.net/media/da724a8b-fe19-4f4e-8262-75c207ae038b.jpg"
+          />
+          
+    
+        </div>
+        
+  
+      </div>
+      
+  
+  
+      <div
+        class="info"
+      >
+        
+    
+        <div
+          class="info-icon"
+        >
+          
+      
+          <img
+            alt=""
+            height="20"
+            src="https://static.xx.fbcdn.net/rsrc.php/v3/ys/r/SRBDu_p7126.png"
+            width="20"
+          />
+          
+    
+        </div>
+        
+  
+      </div>
+      
+  
+      <div
+        class="title"
+      >
+        
+    
+        <div
+          class="content"
+        >
+          
+      
+          <div
+            class="domain"
+          >
+            
+        
+            <span>
+              agirls.aotter.net
+            </span>
+            
+      
+          </div>
+          
+      
+          <div
+            class="main"
+          >
+            
+        
+            <span>
+              三星電視獨家搶先支援Apple TV App，手機還能一秒變遙控器！
+            </span>
+            
+      
+          </div>
+          
+    
+        </div>
+        
+  
+      </div>
+      
+
+    </a>
+    
+
+  </div>
+</div>
+`;
+
+exports[`Ad Test test onAdLoaded, snapshot, anchor DOM: banner 1`] = `
+<div>
+  
+
+  <div
+    class="ad-container"
+  >
+    
+
+    <a
+      class="ad-banner"
+      href="https://agirls.aotter.net/post/55419"
+      target="_blank"
+    >
+      
+  
+      <div
+        class="image"
+      >
+        
+    
+        <div
+          class="content"
+        >
+          
+      
+          <img
+            alt=""
+            class="ads-img"
+            src="https://agirls.aotter.net/media/da724a8b-fe19-4f4e-8262-75c207ae038b.jpg"
+          />
+          
+    
+        </div>
+        
+  
+      </div>
+      
+  
+  
+      <div
+        class="info"
+      >
+        
+    
+        <div
+          class="info-icon"
+        >
+          
+      
+          <img
+            alt=""
+            height="20"
+            src="https://static.xx.fbcdn.net/rsrc.php/v3/ys/r/SRBDu_p7126.png"
+            width="20"
+          />
+          
+    
+        </div>
+        
+  
+      </div>
+      
+  
+      <div
+        class="title"
+      >
+        
+    
+        <div
+          class="content"
+        >
+          
+      
+          <div
+            class="domain"
+          >
+            
+        
+            <span>
+              agirls.aotter.net
+            </span>
+            
+      
+          </div>
+          
+      
+          <div
+            class="main"
+          >
+            
+        
+            <span>
+              三星電視獨家搶先支援Apple TV App，手機還能一秒變遙控器！
+            </span>
+            
+      
+          </div>
+          
+    
+        </div>
+        
+  
+      </div>
+      
+
+    </a>
+    
+
+  </div>
+</div>
+`;
