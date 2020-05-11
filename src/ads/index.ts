@@ -1,6 +1,6 @@
 // import { createEventBus, EventName, AdsEvents } from './event-handler';
 import { findAdElement, createAdsDOM } from './ads-dom';
-import { adsService } from '../service/ads.service';
+import { adsService, AdsService } from '../service/ads.service';
 import { initialWindowScrollEventHandler } from './scroll-handler';
 
 
@@ -21,8 +21,9 @@ export function AotterAds(config: AdsConfig) {
   }
   
   return {
+    config,
     init: () => {
-      initialAd(ctx)
+      initialAd(ctx, adsService(ctx.config.key))
     },
   }
 }
@@ -33,14 +34,13 @@ export function verifyEnv() {
   }
 }
 
-export function initialAd(ctx: AdsContext) {
-  const service = adsService(ctx.config.key);
+export function initialAd(ctx: AdsContext, service: AdsService) {
 
-  service.getAd(ctx.config.type)
+  return service.getAd(ctx.config.type)
     .then(ad => {
       // create DOM
       try {
-        if (!ad) { return; }
+        if (!ad) { return ctx; }
         if (!ad.success) {
           throw Error('load ad failed.')
         }
@@ -48,7 +48,7 @@ export function initialAd(ctx: AdsContext) {
         createAdsDOM(ctx.config.el as any, ctx.currentAdData)
         initialWindowScrollEventHandler(ctx, service)
         ctx.config.onAdLoaded(ctx.config.el, ad)
-        return
+        return ctx
       } catch (error) {
         // error log API
         return Promise.reject(error)
@@ -56,5 +56,6 @@ export function initialAd(ctx: AdsContext) {
     })
     .catch(err => {
       ctx.config.onAdFailed(ctx.config.el, err)
+      return ctx
     })
 }

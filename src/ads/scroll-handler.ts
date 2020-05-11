@@ -6,7 +6,7 @@ export function initialWindowScrollEventHandler(ctx: AdsContext, service: any) {
   if ('IntersectionObserver' in window ) {
     const observer = new IntersectionObserver(entries => {
       if(entries[0].isIntersecting === true) {
-        timeout = setTimeout(() => {
+        timeout = window.setTimeout(() => {
           ctx.config.onAdImpression(ctx.currentAdData)
           service.handleImpression(ctx.currentAdData)
           // only observe once
@@ -24,7 +24,7 @@ export function initialWindowScrollEventHandler(ctx: AdsContext, service: any) {
     const handler = () => {
       if (isScrolledIntoView(ctx.config.el as Element) && !ctx.isInView) {
         ctx.isInView = true
-        timeout = setTimeout(() => {
+        timeout = window.setTimeout(() => {
           if (isScrolledIntoView(ctx.config.el as Element)) {
             // call impression url once
             ctx.hasImpression = true

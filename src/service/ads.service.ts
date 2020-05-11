@@ -10,3 +10,8 @@ export const adsService = (key: string) => {
     }
   }
 }
+
+export interface AdsService {
+  getAd: (type?: string) => Promise<AdApiResponseVM>
+  handleImpression: (data: AdApiResponseVM) => any
+}
