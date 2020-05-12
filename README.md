@@ -42,6 +42,13 @@ npm run build
 yarn run build
 ```
 
+unit test
+```shell
+npm test
+# or
+yarn test
+```
+
 
 ### Import the JS SDK
 
