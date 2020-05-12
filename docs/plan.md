@@ -27,6 +27,8 @@ error handler in SDK，發生錯誤的話一樣call log API
 
 廣告API只會回傳一筆ad嗎? 會不會回傳array的情況? 然後可能廣告UI會顯示carousel之類的UI style?
 
+css目前沒有動態append to header或是inline-style，想過可以靠CI/CD或是rollup來建立出append css style的流程
+
 有想到一些features:
 - css style客製化
 - use `data-*` attributes 來做ad tracker之類的
