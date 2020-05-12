@@ -1,8 +1,4 @@
 import {
-  getByLabelText,
-  getByText,
-  getByTestId,
-  queryByTestId,
   // Tip: all queries are also exposed on an object
   // called "queries" which you could import here as well
   waitFor,
@@ -12,10 +8,14 @@ import {
 import '@testing-library/jest-dom/extend-expect'
 import { AotterAds, initialAd } from '../src/ads/index'
 
+import puppeteer from 'puppeteer'
+import { getDocument, queries, wait } from 'pptr-testing-library'
+
+
+
 function getExampleDOM() {
 
   const div = document.createElement('div')
-  
   const config = {
     el: div,
     key: 'test',
@@ -37,17 +37,14 @@ function getExampleDOM() {
   }
 }
 
-describe('Ad Test', () => {
+describe('E2E test impresstion', () => {
 
   let rootConfig: AdsConfig;
 
   it('Ad Root Creator Config test', async () => {
+
     const { ad, config } = getExampleDOM()
     rootConfig = config
-    expect(ad.config).toMatchObject(config)
-  })
-
-  it('test onAdLoaded, snapshot, anchor DOM', async () => {
 
     const mockedService = {
       getAd: jest.fn(async (type = 'banner') => ({
@@ -64,6 +61,7 @@ describe('Ad Test', () => {
     }
 
     rootConfig.onAdLoaded = jest.fn((node, data) => data)
+    rootConfig.onAdImpression = jest.fn(data => data)
 
     const ret = await initialAd({
       config:rootConfig,
@@ -71,34 +69,19 @@ describe('Ad Test', () => {
       hasImpression: false,
     }, mockedService) as AdsContext
 
-    expect(ret.config).toMatchObject(rootConfig)
-    expect(rootConfig.onAdLoaded).toBeCalled()
-    expect(ret.config.el).toMatchSnapshot('banner')
-    const rootAnchor = queryHelpers.queryByAttribute('class', ret.config.el as HTMLElement, 'ad-banner')
-    expect(rootAnchor?.getAttribute('href')).toBe("https://agirls.aotter.net/post/55419")
-  })
 
+    const browser = await puppeteer.launch({
+      executablePath: 'chrome.exe'
+    })
+    const page = await browser.newPage()
+    page.goto('http://localhost:8080/')
 
-  it('test onAdFailed', async () => {
-
-    const mockedService = {
-      getAd: jest.fn(async (type = 'banner') => ({
-        success: false,
-      }) as any),
-      handleImpression: jest.fn(data => data)
-    }
-
-    rootConfig.onAdFailed = jest.fn((node, data) => data)
-
-    const ret = await initialAd({
-      config:rootConfig,
-      isInView: false,
-      hasImpression: false,
-    }, mockedService) as AdsContext
-
-    expect(ret.config).toMatchObject(rootConfig)
-    expect(rootConfig.onAdFailed).toBeCalled()
-    expect(ret.config.el).toMatchSnapshot('no-ad')
+    
+    const $document = await getDocument(page)  
+    // const $title = await queries.getByText($document, '三星電視獨家搶先支援Apple TV App，手機還能一秒變遙控器！')
+    
+    await page.$eval('.ad-container', (el) => el.scrollIntoView())
+    expect(rootConfig.onAdImpression).toBeCalled()
   })
 
 })

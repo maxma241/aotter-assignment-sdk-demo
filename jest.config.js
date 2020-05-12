@@ -3,6 +3,7 @@ const register = require('ignore-styles').default
 register(['.css', '.styl']);
 
 module.exports = {
+  preset: "jest-puppeteer",
   transform: {
     '^.+\\.ts?$': 'ts-jest',
   },

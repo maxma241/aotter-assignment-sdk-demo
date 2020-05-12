@@ -5,10 +5,13 @@
   "main": "index.js",
   "scripts": {
     "server": "PORT=3000 node ./server/index.js",
+    "server:e2e": "PORT=3000 E2E_TEST=true node ./server/index.js",
     "start": "PORT=8080 parcel public/index.html",
     "dev-js": "parcel src/index.ts",
     "build": "parcel build src/index.ts --out-dir build --out-file ads.js",
     "test": "jest",
+    "e2e": "cd e2e && jest",
+    "test:clear": "jest --clearCache",
     "prestart": "rm -rf dist"
   },
   "keywords": [
@@ -32,12 +35,16 @@
   "devDependencies": {
     "@testing-library/dom": "^7.5.1",
     "@testing-library/jest-dom": "^5.7.0",
+    "@types/puppeteer": "^2.1.0",
     "identity-obj-proxy": "^3.0.0",
     "ignore-styles": "^5.0.1",
     "jest": "^26.0.1",
     "jest-css-modules": "^2.1.0",
+    "jest-puppeteer": "^4.4.0",
     "jest-stylus": "^0.1.2",
     "parcel-bundler": "^1.12.4",
+    "pptr-testing-library": "^0.5.0",
+    "puppeteer": "^3.0.4",
     "sass": "^1.26.5",
     "stylus": "^0.54.7",
     "ts-jest": "^25.5.1",
