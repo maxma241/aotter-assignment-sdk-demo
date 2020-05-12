@@ -1,6 +1,10 @@
 ## 電獺 - Ad SDK
 
+
+[上線計畫書](https://github.com/maxma241/aotter-assignment-sdk-demo/blob/master/docs/plan.md)
+
 Build tool: Parcel
+
 
 ## How to run
 
@@ -10,28 +14,33 @@ npm i
 # or
 yarn
 ```
+
+## 測試
+
+先run API server, 再run client，就可以看範例網頁了
+
 Run the api server first (default port: 3000)
 ```shell
 npm run server
 # or
 yarn run server
+# 若要沒有success false的形況
+yarn run server:no-fail
 ```
 
-Run client (default port: 8080, `dist` folder)
+Run web client (default port: 8080, parcel will compile to `dist` folder)
 ```shell
 npm start
 # or
 yarn start
 ```
 
-Build (in `build` folder, current js, css will be separated)
+Build (parcel will compile to  `build` folder, current js, css will be separated)
 ```shell
 npm run build
 # or
 yarn run build
 ```
-
-[上線計畫書]()
 
 
 ### Import the JS SDK

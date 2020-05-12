@@ -22,3 +22,16 @@ global catch
   }
 ```
 error handler in SDK，發生錯誤的話一樣call log API
+
+## 其它問題
+
+廣告API只會回傳一筆ad嗎? 會不會回傳array的情況? 然後可能廣告UI會顯示carousel之類的UI style?
+
+有想到一些features:
+- css style客製化
+- use `data-*` attributes 來做ad tracker之類的
+- 原本想在底層create一個event bus來dispatch event，後來又想說模仿vue那樣的config好像比較直覺!?
+
+about e2e testing
+用PC(windows)使用WSL環境開發，E2E testing遇到WSL開不起來的情況，一周而已，沒時間handle惹QQ
+
