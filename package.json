@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "server": "PORT=3000 node ./server/index.js",
+    "server:no-fail": "PORT=3000 NO_FAIL=true node ./server/index.js",
     "start": "PORT=8080 parcel public/index.html",
     "dev-js": "parcel src/index.ts",
     "build": "parcel build src/index.ts --out-dir build --out-file ads.js",
